@@ -1,14 +1,41 @@
-{
-  "name": "mct-ai-chat",
-  "version": "1.0.0",
-  "description": "MCT module for AI-CHAT",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "dev": "tsx watch src/index.ts",
-    "test": "jest",
-    "setup": "npm install && npx drizzle-kit push:pg"
-  },
-  "keywords": ["mct", "api", "microservice"],
-  "license": "MIT"
-}
+RUN npm install
+COPY . .
+EXPOSE 3000
+CMD ["npm", "start"]
+### 9. `README.md`
+# MCT-AI-CHAT
+This is a simple Model Context Protocol (MCP) based chat application.
+## Installation and Running
+1. Clone the repository.
+2. Run `npm install` to install dependencies.
+3. Run `npm start` to start the server.
+4. Access the server at `http://localhost:3000`.
+## Docker
+To build and run the application using Docker:
+1. Build the Docker image with `npm run docker`.
+2. Run the Docker container with `docker run -p 3000:3000 mct-ai-chat`.
+This code provides a full setup for a simple Model Context Protocol-based chat application, including a Docker configuration for easy deployment.
+---
+## ⚠️ Failed Responses
+- **qwen/qwen-2.5-coder-32b:** Error: 400 - {"error":{"message":"qwen/qwen-2.5-coder-32b is not a valid model ID","code":400},"user_id":"user_34BajsuC4iIXxoAtGeO2pzlKkKd"}
+- **deepseek/coder:** Error: 400 - {"error":{"message":"deepseek/coder is not a valid model ID","code":400},"user_id":"user_34BajsuC4iIXxoAtGeO2pzlKkKd"}
+- **meta-llama/llama-3.3-70b:** Error: 400 - {"error":{"message":"meta-llama/llama-3.3-70b is not a valid model ID","code":400},"user_id":"user_34BajsuC4iIXxoAtGeO2pzlKkKd"}
+---
+## 📊 Synthesis
+**Overview:** 2 models provided responses to the prompt.
+**Common Themes:**
+- All models addressed the core question
+- Responses varied in depth and approach
+**Response Lengths:**
+- Longest: claude-3.5-sonnet:coding (7,562 characters)
+- Shortest: gpt-4-turbo (3,660 characters)
+**Quality Notes:**
+- Review each response above for accuracy and completeness
+- Consider combining insights from multiple responses
+- Premium models (GPT-4, Claude Opus) typically provide more depth
+**Recommendation:**
+Read all responses and synthesize the best elements from each. Different models excel at different aspects - combine their strengths.
+---
+## 💰 Cost Summary
+**Total Tokens:** 12,112
+**Estimated Cost:** $0.0363
